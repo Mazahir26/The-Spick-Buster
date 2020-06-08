@@ -11,6 +11,7 @@ but if the number of the red spike increases and you're  unable to handle it any
 Now that's why I would say "Be careful when forging your AI Friend". Do not trust anyone.
 
 This game was made in 3 days for BenBonk Game Jam#1.
+You can play the game here : https://darkest-lab.itch.io/the-spike-buster
 
 Special thanks to Kenney.com for providing the arts and sound.
 
