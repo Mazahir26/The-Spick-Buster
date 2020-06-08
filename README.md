@@ -20,5 +20,6 @@ The game is made using Godot game engine.
 
 
 The Project is completely Open Source under the MIT licence.
-You can use the the complete project or part of the project in your one project Pesonal or commercial.
+You can use the complete project or part of the project in your own project(Pesonal or commercial).
 No permmision Required or Giving credits is necessary, but appreciated.
+Thank You, Hope You liked it.
