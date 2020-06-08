@@ -1,4 +1,5 @@
-#The Spick Buster
+##The Spick Buster
+============
 
 This a Simple game made for a gamejam in less than 3 days.
 
