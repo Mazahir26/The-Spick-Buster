@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/circle_05.png" type="Texture" id=1]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.486364 ), 0.0, 0.0, 0, 0, Vector2( 0.290816, 0.05 ), 0.0, 0.0, 0, 0, Vector2( 0.627551, 0.504545 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0227273 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1208, 720 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="ParallaxLayer"]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( 540.421, 276.898 )
+amount = 16
+lifetime = 5.0
+randomness = 1.0
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 640, 360 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 1.0
+angular_velocity = 50.0
+scale_amount = 0.0
+scale_amount_random = 0.17
+scale_amount_curve = SubResource( 1 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 1208, 720 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="ParallaxLayer2"]
+modulate = Color( 1, 1, 1, 0.313726 )
+position = Vector2( 540.421, 276.898 )
+amount = 16
+lifetime = 5.0
+randomness = 1.0
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 640, 360 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 1.0
+angular_velocity = 50.0
+scale_amount = 0.0
+scale_amount_random = 0.17
+scale_amount_curve = SubResource( 1 )
+hue_variation = 1.0
+hue_variation_random = 1.0

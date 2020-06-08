@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Graphic.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Spicke.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 19.6397
+
+[node name="Enemy" type="Area2D" groups=[
+"Enemy",
+]]
+modulate = Color( 0.996078, 0.290196, 0.290196, 1 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.780392, 0.780392, 0.780392, 1 )
+self_modulate = Color( 0.996078, 0.996078, 0.996078, 1 )
+position = Vector2( -0.900497, 3.73834 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+script = ExtResource( 1 )
+color = Color( 0.960784, 0.933333, 0.933333, 1 )
+
+[node name="Stun" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="speed_increaser" type="Timer" parent="."]
+autostart = true
+[connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
+[connection signal="timeout" from="Stun" to="." method="_on_Stun_timeout"]
+[connection signal="timeout" from="speed_increaser" to="." method="_on_speed_increaser_timeout"]

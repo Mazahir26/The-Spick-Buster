@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/PlayersAI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/test_scene.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+
+[node name="test_scene" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="PlayersAI" parent="." instance=ExtResource( 1 )]
+position = Vector2( 543.935, 211.53 )
+
+[node name="Player" parent="PlayersAI" instance=ExtResource( 4 )]
+position = Vector2( -354.444, -186.31 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 2.57213
+margin_top = 12.8606
+margin_right = 191.572
+margin_bottom = 43.8606
+text = "Global Position :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1.71475
+margin_top = 56.8464
+margin_right = 190.715
+margin_bottom = 87.8464
+text = "Local_Position :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 657.596, 298.635 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 578.128, 355.075 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 743.774, 240.943 )
+
+[editable path="PlayersAI"]

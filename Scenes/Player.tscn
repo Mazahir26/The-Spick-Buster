@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Graphic.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/arrow.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 23.8175
+
+[node name="Player" type="Area2D" groups=[
+"Player",
+]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+script = ExtResource( 1 )
+color = Color( 0.113725, 0.333333, 1, 1 )
+Border_color = Color( 0.831373, 0.152941, 0.152941, 1 )
+
+[node name="MuzzelFlash" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.164706 )
+show_behind_parent = true
+position = Vector2( 25, 0.527 )
+rotation = 2.26893
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 3 )
+
+[node name="firerate" type="Timer" parent="."]
+wait_time = 0.001
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = -2000
+limit_top = -1500
+limit_right = 2000
+limit_bottom = 1500
+smoothing_enabled = true
+smoothing_speed = 10.0
+script = ExtResource( 4 )
+[connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
+[connection signal="timeout" from="firerate" to="." method="_on_firerate_timeout"]

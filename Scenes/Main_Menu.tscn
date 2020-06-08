@@ -1,0 +1,473 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Assets/circle_05.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/Orbitron-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/Main_Menu.gd" type="Script" id=3]
+[ext_resource path="res://Assets/musicOn.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fonts/Orbitron-ExtraBold.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.486364 ), 0.0, 0.0, 0, 0, Vector2( 0.290816, 0.05 ), 0.0, 0.0, 0, 0, Vector2( 0.627551, 0.504545 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0227273 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Animation" id=4]
+resource_name = "How to play Show"
+tracks/0/type = "value"
+tracks/0/path = NodePath("home:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("home:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Htp:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Htp:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "def"
+tracks/0/type = "value"
+tracks/0/path = NodePath("home:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("home:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Htp:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Htp:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Htp:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("home:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("home:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 70
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.894118, 0.886275, 0.886275, 0.890196 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.945098, 0.945098, 0.945098, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.996078, 0.262745, 0.262745, 0.890196 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.945098, 0.945098, 0.945098, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.960784, 0.960784, 0.960784, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.945098, 0.945098, 0.945098, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="DynamicFont" id=12]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 23
+outline_color = Color( 0.843137, 0.988235, 0.254902, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 21
+font_data = ExtResource( 2 )
+
+[node name="Main_Menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2( 1208, 720 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Background/ParallaxLayer"]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( 540.421, 276.898 )
+amount = 32
+lifetime = 5.0
+randomness = 1.0
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 640, 360 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 1.0
+angular_velocity = 50.0
+scale_amount = 0.0
+scale_amount_random = 0.17
+scale_amount_curve = SubResource( 1 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 1208, 720 )
+
+[node name="Particles2D" type="CPUParticles2D" parent="Background/ParallaxLayer2"]
+modulate = Color( 1, 1, 1, 0.313726 )
+position = Vector2( 540.421, 276.898 )
+amount = 32
+lifetime = 5.0
+randomness = 1.0
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 640, 360 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 1.0
+angular_velocity = 50.0
+scale_amount = 0.0
+scale_amount_random = 0.17
+scale_amount_curve = SubResource( 1 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "def"
+"anims/How to play Show" = SubResource( 4 )
+anims/def = SubResource( 5 )
+"anims/how to play hide" = SubResource( 6 )
+
+[node name="home" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Made by" type="Label" parent="home"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -145.5
+margin_top = -101.0
+margin_right = 145.5
+custom_fonts/font = SubResource( 7 )
+text = "MADE BY MAZAHIR"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="RichTextLabel" parent="home"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -446.0
+margin_top = 22.3162
+margin_right = 446.0
+margin_bottom = 123.316
+custom_fonts/normal_font = SubResource( 16 )
+bbcode_enabled = true
+bbcode_text = "[center]THE [color=red]SPIKE[/color] BUSTER[/center]"
+text = "THE SPIKE BUSTER"
+
+[node name="Play" type="Button" parent="home"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -25.0
+margin_right = 100.0
+margin_bottom = 25.0
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+custom_colors/font_color_hover = Color( 0.2, 0.2, 0.2, 1 )
+custom_colors/font_color_pressed = Color( 0.27451, 0.27451, 0.27451, 1 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="Button" parent="home"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = 36.3694
+margin_right = 100.0
+margin_bottom = 86.3694
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+custom_colors/font_color_hover = Color( 0.2, 0.2, 0.2, 1 )
+custom_colors/font_color_pressed = Color( 0.27451, 0.27451, 0.27451, 1 )
+text = "How to Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="home"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = 95.9496
+margin_right = 100.0
+margin_bottom = 145.95
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+custom_colors/font_color_hover = Color( 0.2, 0.2, 0.2, 1 )
+custom_colors/font_color_pressed = Color( 0.27451, 0.27451, 0.27451, 1 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="Button" parent="home"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -56.0
+margin_top = -53.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+icon = ExtResource( 4 )
+flat = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Htp" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="how to play" type="Label" parent="Htp"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -327.5
+margin_top = 18.1766
+margin_right = 327.5
+margin_bottom = 119.177
+custom_fonts/font = SubResource( 13 )
+text = "HOW TO PLAY"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Htp"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -452.0
+margin_bottom = -95.0
+custom_fonts/bold_font = SubResource( 14 )
+custom_fonts/normal_font = SubResource( 15 )
+custom_constants/line_separation = 7
+bbcode_enabled = true
+bbcode_text = "[center]You can Move using \"WASD\" or arrow keys, You can shoot using \"Mouse left click\"
+The Game is pretty simple, you just have to shoot or dodge the \"[color=red]Red Spikes[/color]\",
+but if the count of the spikes increases and you're  unable to handle, you can seek 
+help foryour \"[color=green]AI Friend[/color]\" which can be forged at desired position by pressing 
+\"Space\" or \"Enter\".They are pretty strong and will help you shoot  the spikes. 
+But you cannot trust them because the longer they live the chance of them
+turning against you increases. That's why I would say \"[color=gray][b]Be careful when 
+forging your AI Friend[/b][/color]\".Do not trust anyone.
+
+This game was made in 3 days for BenBonk Game Jam#1.[/center]"
+text = "You can Move using \"WASD\" or arrow keys, You can shoot using \"Mouse left click\"
+The Game is pretty simple, you just have to shoot or dodge the \"Red Spikes\",
+but if the count of the spikes increases and you're  unable to handle, you can seek 
+help foryour \"AI Friend\" which can be forged at desired position by pressing 
+\"Space\" or \"Enter\".They are pretty strong and will help you shoot  the spikes. 
+But you cannot trust them because the longer they live the chance of them
+turning against you increases. That's why I would say \"Be careful when 
+forging your AI Friend\".Do not trust anyone.
+
+This game was made in 3 days for BenBonk Game Jam#1."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Htp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = 228.282
+margin_right = 100.0
+margin_bottom = 278.282
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.737255, 0.737255, 0.737255, 1 )
+custom_colors/font_color_hover = Color( 0.2, 0.2, 0.2, 1 )
+custom_colors/font_color_pressed = Color( 0.27451, 0.27451, 0.27451, 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="home/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="home/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="home/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="toggled" from="home/Sound" to="." method="_on_Sound_toggled"]
+[connection signal="pressed" from="Htp/Back" to="." method="_on_Back_pressed"]

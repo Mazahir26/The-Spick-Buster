@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/Graphic.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PlayersAI.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 23.8175
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 300.0
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.952941, 0.388235, 0.388235, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.886275, 0.886275, 0.886275, 1 )
+border_color = Color( 0.917647, 0.917647, 0.917647, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PlayersAI" type="Area2D" groups=[
+"AI",
+"Player_Ai",
+]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+script = ExtResource( 1 )
+color = Color( 0.223529, 1, 0.113725, 1 )
+Border_color = Color( 0.603922, 0.0627451, 0.0627451, 1 )
+
+[node name="MuzzelFlash" type="Position2D" parent="CollisionShape2D"]
+position = Vector2( 25, 0 )
+
+[node name="firerate" type="Timer" parent="."]
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+visible = false
+position = Vector2( 0.135269, 0 )
+shape = SubResource( 2 )
+
+[node name="enemy_refresh" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+margin_left = -40.0
+margin_top = 29.2353
+margin_right = 40.0
+margin_bottom = 39.2353
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+value = 50.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Turn_against" type="Timer" parent="."]
+[connection signal="area_entered" from="." to="." method="_on_PlayersAI_area_entered"]
+[connection signal="timeout" from="firerate" to="." method="_on_firerate_timeout"]
+[connection signal="area_entered" from="Range" to="." method="_on_Range_area_entered"]
+[connection signal="area_exited" from="Range" to="." method="_on_Range_area_exited"]
+[connection signal="timeout" from="enemy_refresh" to="." method="_on_enemy_refresh_timeout"]
+[connection signal="timeout" from="Turn_against" to="." method="_on_Turn_against_timeout"]

@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/spawnner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Border.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Arena.gd" type="Script" id=6]
+[ext_resource path="res://Assets/instruction.png" type="Texture" id=7]
+[ext_resource path="res://Assets/instruction2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/sound/game.music.wav" type="AudioStream" id=9]
+[ext_resource path="res://env.tres" type="Environment" id=10]
+
+[node name="Arena" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="info" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="info"]
+show_behind_parent = true
+margin_left = -157.849
+margin_top = 66.9663
+margin_right = 286.151
+margin_bottom = 426.966
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="info"]
+show_behind_parent = true
+margin_left = 161.999
+margin_top = 16.2797
+margin_right = 605.999
+margin_bottom = 376.28
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="Tween" type="Tween" parent="info"]
+
+[node name="Border" type="Node2D" parent="."]
+
+[node name="Area2D" parent="Border" instance=ExtResource( 3 )]
+position = Vector2( -2000, 101.448 )
+
+[node name="Area2D2" parent="Border" instance=ExtResource( 3 )]
+position = Vector2( 2000, 101.448 )
+
+[node name="Area2D3" parent="Border" instance=ExtResource( 3 )]
+position = Vector2( 0, 1500 )
+rotation = 1.5708
+
+[node name="Area2D4" parent="Border" instance=ExtResource( 3 )]
+position = Vector2( 0, -1500 )
+rotation = 1.5708
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 10 )
+
+[node name="spawnner" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1659.82, -1119.47 )
+
+[node name="spawnner3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1519.28, 1213.11 )
+wait_time = 3.0
+
+[node name="spawnner4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1548.34, 1131.43 )
+wait_time = 3.0
+
+[node name="spawnner2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1486.2, -1080.93 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 98.3146, 323.759 )
+
+[node name="Background" parent="." instance=ExtResource( 4 )]
+
+[node name="UI" parent="." instance=ExtResource( 5 )]
+
+[node name="Dificulty" type="Timer" parent="."]
+wait_time = 45.0
+autostart = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -5.0
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+[connection signal="tween_all_completed" from="info/Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="timeout" from="Dificulty" to="." method="_on_Dificulty_timeout"]
